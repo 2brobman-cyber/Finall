@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dr. Ruth & Dr. Tinsae | Adama Wedding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --midnight: #0a0a0a;
+            --card-dark: #161616;
+            --gold: #d4af37;
+            --burgundy: #800020;
+            --silver: #d1d1d1;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--midnight);
+            color: var(--silver);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* --- Hero Section --- */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), 
+                        url('DSC08933.jpg'); /* Ensure this image is in your folder */
+            background-size: cover;
+            background-position: center 30%;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Alex Brush', cursive;
+            font-size: clamp(3rem, 10vw, 6.5rem);
+            color: var(--gold);
+            margin: 0 10px;
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8);
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(0.9rem, 4vw, 1.1rem);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 15px;
+            color: white;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        /* --- Thank You Message --- */
+        .thank-you-box {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: var(--midnight);
+        }
+
+        .thank-you-content {
+            max-width: 800px;
+            margin: 0 auto;
+            border-left: 3px solid var(--gold);
+            padding: 20px 30px;
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            background: rgba(255, 255, 255, 0.03);
+            text-align: left;
+        }
+
+        .thank-you-content p:last-child {
+            text-align: right;
+            margin-top: 20px;
+            font-weight: bold;
+            font-family: 'Alex Brush', cursive;
+            font-size: 1.5rem;
+        }
+
+        /* --- Landscape Photos Gallery (New Section) --- */
+        .gallery-section {
+            padding: 80px 20px;
+            background-color: var(--midnight);
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px; /* Fixed height for consistency */
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            border-color: var(--gold);
+        }
+
+        /* --- Wedding Plan Timeline --- */
+        .program-section {
+            padding: 80px 20px;
+            background: linear-gradient(to bottom, var(--midnight), #121212);
+            padding-bottom: 150px;
+        }
+
+        .timeline-wrap {
+            position: relative;
+            max-width: 900px;
+            margin: 60px auto;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: var(--gold);
+            transform: translateX(-50%);
+            opacity: 0.3;
+        }
+
+        .plan-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .plan-content {
+            width: 44%;
+            background: var(--card-dark);
+            padding: 30px;
+            border-radius: 4px;
+            border-bottom: 3px solid transparent;
+            transition: 0.4s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .plan-item.left { flex-direction: row; text-align: right; }
+        .plan-item.right { flex-direction: row-reverse; text-align: left; }
+
+        .plan-item:hover .plan-content {
+            border-bottom: 3px solid var(--gold);
+            transform: translateY(-10px);
+        }
+
+        .heart-dot {
+            width: 50px;
+            height: 50px;
+            background-color: var(--midnight);
+            border: 2px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: var(--burgundy);
+            font-size: 1.4rem;
+            z-index: 2;
+            transition: 0.3s;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .plan-item:hover .heart-dot {
+            background-color: var(--gold);
+            color: white;
+            transform: scale(1.2);
+        }
+
+        .plan-time { color: var(--gold); font-weight: 600; letter-spacing: 2px; margin-bottom: 10px; font-size: 1.1rem; }
+        .plan-label { color: white; font-size: 1.4rem; margin: 0; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+        .plan-desc { color: #aaa; font-size: 1rem; margin-top: 10px; line-height: 1.5; }
+
+        /* --- Wish Wall --- */
+        .wish-section {
+            padding: 80px 20px;
+            padding-bottom: 120px;
+            background: var(--midnight);
+            text-align: center;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: var(--card-dark);
+            padding: 40px 25px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 12px 0;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            color: white;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+        }
+
+        .gold-btn {
+            background: var(--gold);
+            color: black;
+            border: none;
+            padding: 16px 40px;
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            width: 100%;
+            border-radius: 4px;
+        }
+
+        .gold-btn:hover { background: #fff; box-shadow: 0 0 30px var(--gold); }
+
+        /* --- Music Player --- */
+        .music-bar {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 400px;
+            background: rgba(10, 10, 10, 0.95);
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            border: 1px solid var(--gold);
+            z-index: 1000;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        #musicToggle {
+            background: var(--gold);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* --- Mobile Optimization --- */
+        @media (max-width: 768px) {
+            header { background-attachment: scroll; }
+            h1 { margin-top: 20px; }
+            .timeline-line { left: 20px; }
+            .plan-item {
+                flex-direction: row-reverse !important;
+                justify-content: flex-start !important;
+                text-align: left !important;
+                margin-left: 50px;
+                margin-bottom: 40px;
+            }
+            .plan-content { width: 100%; padding: 20px; }
+            .heart-dot { left: 20px; transform: translateX(-50%); width: 40px; height: 40px; font-size: 1.2rem; }
+            .plan-content[style*="visibility: hidden"] { display: none; }
+            .music-bar { bottom: 20px; padding: 10px 15px; }
+            .plan-label { font-size: 1.2rem; }
+            .thank-you-content { padding: 15px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Dr. Ruth &<br>Dr. Tinsae</h1>
+        <div class="hero-subtitle">Forever Starts Today</div>
+    </header>
+
+    <section class="thank-you-box">
+        <div class="thank-you-content">
+            <h2 style="color: var(--gold); font-family: 'Alex Brush'; font-size: 3rem; margin-top: 0;">Thank You for Coming</h2>
+            <p>"To our family and friends, your presence is the greatest gift. Thank you for traveling to celebrate our union in Adama. We are so blessed to have you in our lives."</p>
+            <p>— Dr. Ruth Fiseha & Dr. Tinsae Asfaw</p>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Landscape Photos -->
+    <section class="gallery-section">
+        <h2 style="color: var(--gold); text-transform: uppercase; letter-spacing: 5px; font-size: 1.2rem;">The Journey</h2>
+        <h3 style="font-family: 'Alex Brush'; font-size: 3.5rem; color: white; margin-top: 10px;">Landscape Photos</h3>
+        
+        <div class="gallery-grid">
+            <!-- 
+               INSTRUCTION: To show your real photos, replace the links below:
+               Right-click your photo on Google Photos -> Open image in new tab -> Copy address
+               Paste that address inside the src="https://photos.app.goo.gl/hjXfGQ9mjnkhfvWH8" quotes below.
+            -->
+            <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczObKMk9Ajv69RchF6Owi8BfXXWvsvx_zWZxA5yOohvhM9gTzUO9IITSOExecQSjSw382kRSYkBnnCHnsjWsQ6CL7Ert9k6cg8ODBaYGUpkPfx1nKyCaPZI1AbZPyO0ZiiBm4j-ub3206zfYqv3lkFV3=w927-h618-s-no-gm?authuser=0" alt="Landscape Photo 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczMxRwJacGJZLHU_eDZKTymXRML1L_i26AtOTFzMTkXRyyqhrxZYORlcufxDyPx8NUrphTZnlb3D1BDCzt-kved-eUVWrZ6lz-cKjH8s2PgOtxhJ8R8SjebpSK3jJeZiIv3QMH787QK1Obk39e-0Cyw2=w927-h618-s-no-gm?authuser=0" alt="Landscape Photo 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczMc9zXR-YGgozijtfNmxrqr7dDaD3q5qjM_NPr8fnl0E9AYnWXsYr8speuaExk7V_VWtC-JPckPp_J3eT9nQQP1ZSsJOeMBVfYXhR5gnrmZMLZuH5cWo-MLrMJAfe92tpeRhPkmXSs4lj1SGI9254Ro=w927-h618-s-no-gm?authuser=0" alt="Landscape Photo 3">
+            </div>
+            <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczNCGaGB1F3bGCmb574miRwDZicwSH4qSrdbZHGH4pNbehEt1wsBIzqwr02G4rZuE7u_7xpzsgmu5GRHiJjdeZ3IL3CR6GzqdWgqagHJWPmR8U-VNR1tBjkiI6R5b_UvTDgQmDM_QmWH6T9pylsumrgA=w412-h618-s-no-gm?authuser=0" alt="Landscape Photo 4">
+            </div>
+          <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczPwTLeaPhCSqOZ0RrnJQetPbSu2N2ifOx924Qf5uCEadyriMpwEYUgAeHWjxPxhyB3KrS3UMOrOdtSMOcKfAg-63wKiPOkLsPkCvuPJRreOGmPEQQ-qAmKWQEJ2KVgy2Saz8wD9Y4lvrt77cvC2jBQ2=w927-h618-s-no-gm?authuser=0" alt="Landscape Photo 5">
+            </div>
+      <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczNlTYFsZYBQ8BmGpf-r6-POGmpILuNtOAkE1gO-6AvjkDCi9SsuAb3CKGT3VLasjJ3NlnFcnDLp7QTQmnEyopjY-lxjgQyGfArC5b3J7l-6MuRnX5m3sVd_oi_vNDlqXFo4jW3IUqwbP2LrEIDljOi1=w412-h618-s-no-gm?authuser=0">
+            </div> 
+    <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczNNtbmzDKYXcZOtMRFuMYchSyN5QsulyRzbt-rubgVRV1R67ZKYJUBrQgxXvm8LzNPxDLZJsQacrj4cXwpgB_DgEIeixlvuubUujFdSHQcRVGTqEWPrDcEN-yK6oDkqXtWRcyj5_fw7VGZhr2d8oTGs=w412-h618-s-no-gm?authuser=0">
+            </div>
+          <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczP8S3TU0B4UCqR5ZIH7kLX6iTH71NvuT6XntY3NGooLY0xvYXICuego-Qxgv5kJxQHcRNBafQdRl9qLlbsgFwqNkLU-YgGodAF9erQzcpqkZsN-L6bNEyeZ6I0pTsHLfNOsfBkDtyKqU0OaQjfGlYpY=w412-h618-s-no-gm?authuser=0">
+            </div>
+      <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczOBncME3oF4sm2-LNgBHbpGDzFHlheFjGpeAOu9cjamE5wR9hP95GrdeC5wrcR875aSsRJAR7cEW_fnnRKNnuCQJwAqoLRe6UEasgb_ifykqo04bzUvL55dipvgdy1XNek6x74pTc7BNRGg1kNS7ysY=w412-h618-s-no-gm?authuser=0">
+            </div>
+     <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczMY5UUwKDb3PXKaFBGOSTbn9Lm3S7H9Lqy-dwTnxZlqoDrswKpr8No9Mshe0N0Z0cZzevZuXeH2-nmVVfDiH2NFspBIBnySDhu0l_0EtfYztNRoOJjnwvsVe1sBqfJxCW1Zc4NB0F04ksJoGBjLQtfW=w412-h618-s-no-gm?authuser=0">
+            </div>
+     <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczNnzh5PvGqpVRWtrHgMrpyUG6Y4_yXr-2mKhU0P2yUutKaZU3hhx43ChWuap8uY5i9OTGddZbkxmCxATkj4wkLg-KNLyEmJmBnFPDSdEk6jjdqHL54Insfnx24fvJtOgB_eDDatieaR__wJBNmeBoxG=w412-h618-s-no-gm?authuser=0">
+            </div>
+     <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczNCGaGB1F3bGCmb574miRwDZicwSH4qSrdbZHGH4pNbehEt1wsBIzqwr02G4rZuE7u_7xpzsgmu5GRHiJjdeZ3IL3CR6GzqdWgqagHJWPmR8U-VNR1tBjkiI6R5b_UvTDgQmDM_QmWH6T9pylsumrgA=w412-h618-s-no-gm?authuser=0" alt="Landscape Photo 12">
+            </div>
+    <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczP6xPz-8E-y2_w-8SyyfVAg-hVgK9eGa4KdqRNrnJJxrQ6JAmQqFvJErZvtVwRezue-llMjf_c_-go0COWcEgDdEFApwQnt5tfCSvx-gh405kB5D9HBlgm-njVXznel1mZsWU_nfJkmToekFwxg6ic7=w412-h618-s-no-gm?authuser=0">
+            </div>
+    <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczO7WrlWHx6rpJ6DmFqrfeIVC6xIn53Mx4ludUfkgFjXaVWURGEzFJh1-ok2XPX7z6Dq4AsEHaoAcrqIfm9-kNBD0CMD6MvOn5rjNTfxhbZz7iF8CgHVpWj6plflKIuAblb4lf5KVOk6vRECaXWkVvie=w412-h618-s-no-gm?authuser=0">
+            </div>
+    <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczPa_2CmzL-gNuMKTta_Nsxd_o45pUDWNoFlbzzUymaMk5i-7tMicZUo6bvqiMF9IkWxKkc38PXIjwuc-W96lYvYPPBVUepja7XRLoSeb372WveZgcEaeR0nnlO2XX4iGzmf3kOZM0veBJ0nSjaH21m1=w927-h618-s-no-gm?authuser=0">
+            </div>
+     <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczPSmcNkjVvLAgCtmMB8GedeFtA5DzvSL2_XaJXCjMhWq3QMCxKeVJsSBTRfa3u5mvk8sBhSVhMEc3r0DHN-jy0H0ErryytDiwv524MMTShueixCKFiNWn4h9_zW_y8D-0FYRQXGBHCOBtEZOTtq_WrU=w412-h618-s-no-gm?authuser=0">
+            </div>
+    <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczNlHTYcSFpoor87ym7Y3lq-4FrRFFQpZOiozhy05OLsfUsryBbpFa6HRAy6OZjVvE-AJEvDpH6TCy-2kqzEiB4WZIzqUAy1C2UdAg-kYZGaKv5uQ5whvOlEYzJs5pLBGFoEN8GyiUq1OuS6yqMu46dq=w412-h618-s-no-gm?authuser=0">
+            </div>
+     <div class="gallery-item">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczOWqmj_Jsau3GdQuVixvHefkeR4oIe5pRJVMbl56hV9yQUeTcpiifKpysVClzcea_m4YysNgNcbrDjAIcNhJ84g7UYbV3qn6BNvTokIo3Q-1IZccuX2Ft805HrQeSsUReJbno3oCQXb4FQyZYYMN867=w412-h618-s-no-gm?authuser=0">
+            </div>
+      </div>
+    </section>
+
+    <section class="program-section">
+        <div style="text-align: center;">
+            <h2 style="color: var(--gold); text-transform: uppercase; letter-spacing: 5px; font-weight: 300;">Wedding Plan</h2>
+            <h3 style="font-family: 'Alex Brush'; font-size: 4rem; margin-top: -10px; color: white;">The Timeline</h3>
+        </div>
+
+        <div class="timeline-wrap">
+            <div class="timeline-line"></div>
+
+            <div class="plan-item left">
+                <div class="plan-content">
+                    <div class="plan-time">11:30 PM</div>
+                    <h4 class="plan-label">Grand Welcome</h4>
+                    <p class="plan-desc">Receiving our honored guests at the Kanet Hotel.</p>
+                </div>
+                <div class="heart-dot">♥</div>
+                <div class="plan-content" style="visibility: hidden;"></div>
+            </div>
+
+            <div class="plan-item right">
+                <div class="plan-content">
+                    <div class="plan-time">12:30 AM</div>
+                    <h4 class="plan-label">Wedding Banquet</h4>
+                    <p class="plan-desc">A formal dinner service celebrating the union of Dr. Ruth & Dr. Tinsae.</p>
+                </div>
+                <div class="heart-dot">♥</div>
+                <div class="plan-content" style="visibility: hidden;"></div>
+            </div>
+
+            <div class="plan-item left">
+                <div class="plan-content">
+                    <div class="plan-time">01:30 AM</div>
+                    <h4 class="plan-label">Gift Ceremony</h4>
+                    <p class="plan-desc">A heartfelt moment of tradition, blessings, and gratitude.</p>
+                </div>
+                <div class="heart-dot">♥</div>
+                <div class="plan-content" style="visibility: hidden;"></div>
+            </div>
+
+            <div class="plan-item right">
+                <div class="plan-content">
+                    <div class="plan-time">02:00 AM</div>
+                    <h4 class="plan-label">Cake & Dancing</h4>
+                    <p class="plan-desc">The sweet celebration continues as we open the dance floor.</p>
+                </div>
+                <div class="heart-dot">♥</div>
+                <div class="plan-content" style="visibility: hidden;"></div>
+            </div>
+
+            <div class="plan-item left">
+                <div class="plan-content">
+                    <div class="plan-time">02:30 AM</div>
+                    <h4 class="plan-label">Photography</h4>
+                    <p class="plan-desc">Final captures of our magical night with family and friends.</p>
+                </div>
+                <div class="heart-dot">♥</div>
+                <div class="plan-content" style="visibility: hidden;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="wish-section">
+        <h2 style="color: var(--gold); font-size: 3rem; font-family: 'Alex Brush'; margin-bottom: 5px;">Share the Magic</h2>
+        <p style="letter-spacing: 2px; margin-top: 0;">Leave a wish or share your photos with us</p>
+        
+        <div class="form-container">
+            <form action="https://formspree.io/f/your-email" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <textarea name="wish" rows="4" placeholder="Your Message for the Doctors..." required></textarea>
+                <input type="url" name="photo_link" placeholder="Link to share your photos (Google Drive/Photos/iCloud)">
+                <button type="submit" class="gold-btn">Submit to Wall</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Music Player -->
+    <div class="music-bar">
+        <button id="musicToggle">▶</button>
+        <div style="font-size: 0.85rem; text-align: left; line-height: 1.2;">
+            <b style="color:var(--gold); display: block;">Abinet Agonafir</b>
+            <span id="musicStatus" style="color:#888; font-size: 0.75rem;">Tap to play</span>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="YOUR_MP3_LINK_HERE" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const music = document.getElementById("bgMusic");
+        const btn = document.getElementById("musicToggle");
+        const status = document.getElementById("musicStatus");
+
+        function toggleMusic() {
+            if (music.paused) {
+                music.play().then(() => {
+                    btn.innerText = "||";
+                    status.innerText = "Playing: Yewunet Menged";
+                }).catch(e => {
+                    status.innerText = "Error: Add MP3 file";
+                    console.log("Autoplay prevented or file missing", e);
+                });
+            } else {
+                music.pause();
+                btn.innerText = "▶";
+                status.innerText = "Paused";
+            }
+        }
+
+        document.addEventListener('touchstart', function initAudio() {
+            if(music.readyState >= 1) {
+                toggleMusic();
+                document.removeEventListener('touchstart', initAudio);
+            }
+        }, { once: true });
+
+        document.addEventListener('click', function initAudioDesktop() {
+            if(music.readyState >= 1) {
+                toggleMusic();
+                document.removeEventListener('click', initAudioDesktop);
+            }
+        }, { once: true });
+
+        btn.onclick = (e) => {
+            e.stopPropagation();
+            toggleMusic();
+        };
+    </script>
+</body>
+</html>
+    
+  </body>
+  
+</html>

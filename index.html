@@ -1,16 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Untitled</title>
-    
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -25,6 +14,7 @@
             --gold: #d4af37;
             --burgundy: #800020;
             --silver: #d1d1d1;
+            --white: #ffffff; /* Added for the snippet compatibility */
         }
 
         * { box-sizing: border-box; }
@@ -38,19 +28,22 @@
             overflow-x: hidden;
         }
 
-        /* --- Hero Section --- */
+        /* --- Hero Section (Merged with your new snippet) --- */
         header {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), 
-                        url('DSC08933.jpg'); /* Ensure this image is in your folder */
+            /* Your new background URL and gradient */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://lh3.googleusercontent.com/pw/AP1GczPa_2CmzL-gNuMKTta_Nsxd_o45pUDWNoFlbzzUymaMk5i-7tMicZUo6bvqiMF9IkWxKkc38PXIjwuc-W96lYvYPPBVUepja7XRLoSeb372WveZgcEaeR0nnlO2XX4iGzmf3kOZM0veBJ0nSjaH21m1=w927-h618-s-no-gm?authuser=0');
             background-size: cover;
-            background-position: center 30%;
-            background-attachment: fixed;
+            background-position: center; /* Centered as per your snippet */
+            background-attachment: fixed; /* Parallax effect */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 0 1rem; /* Added from snippet for mobile safety */
+            color: var(--silver); /* Keeping your text color style */
             position: relative;
         }
 
@@ -99,7 +92,7 @@
             font-size: 1.5rem;
         }
 
-        /* --- Landscape Photos Gallery (New Section) --- */
+        /* --- Landscape Photos Gallery --- */
         .gallery-section {
             padding: 80px 20px;
             background-color: var(--midnight);
@@ -119,18 +112,20 @@
             border-radius: 4px;
             border: 1px solid rgba(212, 175, 55, 0.2);
             cursor: pointer;
+            background-color: #1a1a1a;
         }
 
         .gallery-item img {
             width: 100%;
-            height: 300px; /* Fixed height for consistency */
-            object-fit: cover;
+            height: 400px;
+            object-fit: contain; /* Fits without cropping */
+            padding: 10px;
             transition: transform 0.5s ease;
             display: block;
         }
 
         .gallery-item:hover img {
-            transform: scale(1.05);
+            transform: scale(1.02);
             border-color: var(--gold);
         }
 
@@ -327,17 +322,12 @@
         </div>
     </section>
 
-    <!-- NEW SECTION: Landscape Photos -->
+    <!-- Landscape Photos -->
     <section class="gallery-section">
         <h2 style="color: var(--gold); text-transform: uppercase; letter-spacing: 5px; font-size: 1.2rem;">The Journey</h2>
         <h3 style="font-family: 'Alex Brush'; font-size: 3.5rem; color: white; margin-top: 10px;">Landscape Photos</h3>
         
         <div class="gallery-grid">
-            <!-- 
-               INSTRUCTION: To show your real photos, replace the links below:
-               Right-click your photo on Google Photos -> Open image in new tab -> Copy address
-               Paste that address inside the src="https://photos.app.goo.gl/hjXfGQ9mjnkhfvWH8" quotes below.
-            -->
             <div class="gallery-item">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczObKMk9Ajv69RchF6Owi8BfXXWvsvx_zWZxA5yOohvhM9gTzUO9IITSOExecQSjSw382kRSYkBnnCHnsjWsQ6CL7Ert9k6cg8ODBaYGUpkPfx1nKyCaPZI1AbZPyO0ZiiBm4j-ub3206zfYqv3lkFV3=w927-h618-s-no-gm?authuser=0" alt="Landscape Photo 1">
             </div>
@@ -350,49 +340,49 @@
             <div class="gallery-item">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczNCGaGB1F3bGCmb574miRwDZicwSH4qSrdbZHGH4pNbehEt1wsBIzqwr02G4rZuE7u_7xpzsgmu5GRHiJjdeZ3IL3CR6GzqdWgqagHJWPmR8U-VNR1tBjkiI6R5b_UvTDgQmDM_QmWH6T9pylsumrgA=w412-h618-s-no-gm?authuser=0" alt="Landscape Photo 4">
             </div>
-          <div class="gallery-item">
+            <div class="gallery-item">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczPwTLeaPhCSqOZ0RrnJQetPbSu2N2ifOx924Qf5uCEadyriMpwEYUgAeHWjxPxhyB3KrS3UMOrOdtSMOcKfAg-63wKiPOkLsPkCvuPJRreOGmPEQQ-qAmKWQEJ2KVgy2Saz8wD9Y4lvrt77cvC2jBQ2=w927-h618-s-no-gm?authuser=0" alt="Landscape Photo 5">
             </div>
-      <div class="gallery-item">
+            <div class="gallery-item">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczNlTYFsZYBQ8BmGpf-r6-POGmpILuNtOAkE1gO-6AvjkDCi9SsuAb3CKGT3VLasjJ3NlnFcnDLp7QTQmnEyopjY-lxjgQyGfArC5b3J7l-6MuRnX5m3sVd_oi_vNDlqXFo4jW3IUqwbP2LrEIDljOi1=w412-h618-s-no-gm?authuser=0">
             </div> 
-    <div class="gallery-item">
+            <div class="gallery-item">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczNNtbmzDKYXcZOtMRFuMYchSyN5QsulyRzbt-rubgVRV1R67ZKYJUBrQgxXvm8LzNPxDLZJsQacrj4cXwpgB_DgEIeixlvuubUujFdSHQcRVGTqEWPrDcEN-yK6oDkqXtWRcyj5_fw7VGZhr2d8oTGs=w412-h618-s-no-gm?authuser=0">
             </div>
-          <div class="gallery-item">
+            <div class="gallery-item">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczP8S3TU0B4UCqR5ZIH7kLX6iTH71NvuT6XntY3NGooLY0xvYXICuego-Qxgv5kJxQHcRNBafQdRl9qLlbsgFwqNkLU-YgGodAF9erQzcpqkZsN-L6bNEyeZ6I0pTsHLfNOsfBkDtyKqU0OaQjfGlYpY=w412-h618-s-no-gm?authuser=0">
             </div>
-      <div class="gallery-item">
+            <div class="gallery-item">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczOBncME3oF4sm2-LNgBHbpGDzFHlheFjGpeAOu9cjamE5wR9hP95GrdeC5wrcR875aSsRJAR7cEW_fnnRKNnuCQJwAqoLRe6UEasgb_ifykqo04bzUvL55dipvgdy1XNek6x74pTc7BNRGg1kNS7ysY=w412-h618-s-no-gm?authuser=0">
             </div>
-     <div class="gallery-item">
+            <div class="gallery-item">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczMY5UUwKDb3PXKaFBGOSTbn9Lm3S7H9Lqy-dwTnxZlqoDrswKpr8No9Mshe0N0Z0cZzevZuXeH2-nmVVfDiH2NFspBIBnySDhu0l_0EtfYztNRoOJjnwvsVe1sBqfJxCW1Zc4NB0F04ksJoGBjLQtfW=w412-h618-s-no-gm?authuser=0">
             </div>
-     <div class="gallery-item">
+            <div class="gallery-item">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczNnzh5PvGqpVRWtrHgMrpyUG6Y4_yXr-2mKhU0P2yUutKaZU3hhx43ChWuap8uY5i9OTGddZbkxmCxATkj4wkLg-KNLyEmJmBnFPDSdEk6jjdqHL54Insfnx24fvJtOgB_eDDatieaR__wJBNmeBoxG=w412-h618-s-no-gm?authuser=0">
             </div>
-     <div class="gallery-item">
+            <div class="gallery-item">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczNCGaGB1F3bGCmb574miRwDZicwSH4qSrdbZHGH4pNbehEt1wsBIzqwr02G4rZuE7u_7xpzsgmu5GRHiJjdeZ3IL3CR6GzqdWgqagHJWPmR8U-VNR1tBjkiI6R5b_UvTDgQmDM_QmWH6T9pylsumrgA=w412-h618-s-no-gm?authuser=0" alt="Landscape Photo 12">
             </div>
-    <div class="gallery-item">
+            <div class="gallery-item">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczP6xPz-8E-y2_w-8SyyfVAg-hVgK9eGa4KdqRNrnJJxrQ6JAmQqFvJErZvtVwRezue-llMjf_c_-go0COWcEgDdEFApwQnt5tfCSvx-gh405kB5D9HBlgm-njVXznel1mZsWU_nfJkmToekFwxg6ic7=w412-h618-s-no-gm?authuser=0">
             </div>
-    <div class="gallery-item">
+            <div class="gallery-item">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczO7WrlWHx6rpJ6DmFqrfeIVC6xIn53Mx4ludUfkgFjXaVWURGEzFJh1-ok2XPX7z6Dq4AsEHaoAcrqIfm9-kNBD0CMD6MvOn5rjNTfxhbZz7iF8CgHVpWj6plflKIuAblb4lf5KVOk6vRECaXWkVvie=w412-h618-s-no-gm?authuser=0">
             </div>
-    <div class="gallery-item">
+            <div class="gallery-item">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczPa_2CmzL-gNuMKTta_Nsxd_o45pUDWNoFlbzzUymaMk5i-7tMicZUo6bvqiMF9IkWxKkc38PXIjwuc-W96lYvYPPBVUepja7XRLoSeb372WveZgcEaeR0nnlO2XX4iGzmf3kOZM0veBJ0nSjaH21m1=w927-h618-s-no-gm?authuser=0">
             </div>
-     <div class="gallery-item">
+            <div class="gallery-item">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczPSmcNkjVvLAgCtmMB8GedeFtA5DzvSL2_XaJXCjMhWq3QMCxKeVJsSBTRfa3u5mvk8sBhSVhMEc3r0DHN-jy0H0ErryytDiwv524MMTShueixCKFiNWn4h9_zW_y8D-0FYRQXGBHCOBtEZOTtq_WrU=w412-h618-s-no-gm?authuser=0">
             </div>
-    <div class="gallery-item">
+            <div class="gallery-item">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczNlHTYcSFpoor87ym7Y3lq-4FrRFFQpZOiozhy05OLsfUsryBbpFa6HRAy6OZjVvE-AJEvDpH6TCy-2kqzEiB4WZIzqUAy1C2UdAg-kYZGaKv5uQ5whvOlEYzJs5pLBGFoEN8GyiUq1OuS6yqMu46dq=w412-h618-s-no-gm?authuser=0">
             </div>
-     <div class="gallery-item">
+            <div class="gallery-item">
                 <img src="https://lh3.googleusercontent.com/pw/AP1GczOWqmj_Jsau3GdQuVixvHefkeR4oIe5pRJVMbl56hV9yQUeTcpiifKpysVClzcea_m4YysNgNcbrDjAIcNhJ84g7UYbV3qn6BNvTokIo3Q-1IZccuX2Ft805HrQeSsUReJbno3oCQXb4FQyZYYMN867=w412-h618-s-no-gm?authuser=0">
             </div>
-      </div>
+        </div>
     </section>
 
     <section class="program-section">
@@ -480,7 +470,8 @@
     </div>
 
     <audio id="bgMusic" loop>
-        <source src="YOUR_MP3_LINK_HERE" type="audio/mpeg">
+        <!-- Update this src to your local file or a real URL -->
+        <source src="file:///C:/Users/HP/Downloads/ytdowncom-youtube-media-ujidhlkxa-g-008-128k_gQsov5BA.mp3" type="audio/mpeg">
     </audio>
 
     <script>
@@ -488,6 +479,7 @@
         const btn = document.getElementById("musicToggle");
         const status = document.getElementById("musicStatus");
 
+        // 1. Toggle Function (Used by the button only)
         function toggleMusic() {
             if (music.paused) {
                 music.play().then(() => {
@@ -504,28 +496,47 @@
             }
         }
 
+        // 2. Start Function (Used by Scroll/Touch) - Only plays if paused
+        function startMusic() {
+            if (music.paused) {
+                music.play().then(() => {
+                    btn.innerText = "||";
+                    status.innerText = "Playing: Yewunet Menged";
+                }).catch(e => {
+                    // Browser requires interaction first
+                    console.log("Playback requires user interaction first", e);
+                });
+            }
+        }
+
+        // 3. SCROLL EVENT: Play when scrolled past 100px
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                startMusic();
+            }
+        });
+
+        // 4. TOUCH EVENT: Play on first touch (Mobile)
         document.addEventListener('touchstart', function initAudio() {
             if(music.readyState >= 1) {
-                toggleMusic();
+                startMusic();
                 document.removeEventListener('touchstart', initAudio);
             }
         }, { once: true });
 
+        // 5. CLICK EVENT: Play on first click (Desktop)
         document.addEventListener('click', function initAudioDesktop() {
             if(music.readyState >= 1) {
-                toggleMusic();
+                startMusic();
                 document.removeEventListener('click', initAudioDesktop);
             }
         }, { once: true });
 
+        // 6. BUTTON CLICK: Toggle Play/Pause manually
         btn.onclick = (e) => {
-            e.stopPropagation();
+            e.stopPropagation(); // Prevent triggering document click
             toggleMusic();
         };
     </script>
 </body>
-</html>
-    
-  </body>
-  
 </html>
